@@ -519,7 +519,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="hero-bg grid-overlay relative overflow-hidden min-h-[92dvh] flex items-center">
+      <section className="hero-bg grid-overlay relative overflow-hidden">
         {/* Decorative circles */}
         <div
           className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -530,8 +530,8 @@ export default function LandingPage() {
           style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 70%)' }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
             <div>
               {/* Badge */}
@@ -600,7 +600,7 @@ export default function LandingPage() {
             </div>
 
             {/* Right: mockup */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end overflow-visible">
               <PortalMockup />
             </div>
           </div>
@@ -608,7 +608,7 @@ export default function LandingPage() {
 
         {/* Bottom fade */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 h-10 pointer-events-none"
           style={{ background: 'linear-gradient(to bottom, transparent, #ffffff)' }}
         />
       </section>
