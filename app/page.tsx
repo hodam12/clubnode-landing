@@ -481,7 +481,6 @@ const plans = [
     features: [
       'Alles van Pro',
       'Meerdere clubs beheren',
-      'API toegang',
       'Aangepaste integraties',
       'SLA-garantie',
       'Dedicated support',
@@ -594,8 +593,8 @@ export default function LandingPage() {
               {/* Trust stats */}
               <div className="flex flex-wrap gap-6 anim-4">
                 {[
-                  { value: '100+', label: 'Sportclubs' },
-                  { value: '15k+', label: 'Leden bereikt' },
+                  { value: '1', label: 'Sportclub' },
+                  { value: '~1.000', label: 'Leden bereikt' },
                   { value: '99.9%', label: 'Uptime' },
                 ].map(({ value, label }) => (
                   <div key={label}>
