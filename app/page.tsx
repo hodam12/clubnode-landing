@@ -67,10 +67,7 @@ function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium transition-colors duration-150"
-                style={{ color: 'rgba(255,255,255,0.65)' }}
-                onMouseOver={(e) => (e.currentTarget.style.color = '#ffffff')}
-                onMouseOut={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+                className="nav-link text-sm font-medium"
               >
                 {item.label}
               </a>
@@ -80,9 +77,8 @@ function Navbar() {
           {/* CTA */}
           <div className="flex items-center gap-3">
             <a
-              href="mailto:info@clubnode.online"
-              className="hidden sm:inline-flex text-sm font-medium transition-colors"
-              style={{ color: 'rgba(255,255,255,0.65)' }}
+              href="https://dashboard.clubnode.online"
+              className="nav-link hidden sm:inline-flex text-sm font-medium"
             >
               Inloggen
             </a>
@@ -1281,11 +1277,7 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 {['Functies', 'Beeldschermen', 'Integraties', 'Prijzen', 'FAQ'].map((item) => (
                   <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-sm transition-colors"
-                      style={{ color: 'rgba(255,255,255,0.5)' }}
-                    >
+                    <a href={`#${item.toLowerCase()}`} className="footer-link text-sm">
                       {item}
                     </a>
                   </li>
@@ -1305,11 +1297,7 @@ export default function LandingPage() {
                   { label: 'Support', href: 'mailto:support@clubnode.online' },
                 ].map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-sm transition-colors"
-                      style={{ color: 'rgba(255,255,255,0.5)' }}
-                    >
+                    <a href={item.href} className="footer-link text-sm">
                       {item.label}
                     </a>
                   </li>
