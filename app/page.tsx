@@ -585,15 +585,15 @@ export default function LandingPage() {
               </div>
 
               {/* Trust stats */}
-              <div className="flex flex-wrap gap-6 anim-4">
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }} className="anim-4">
                 {[
                   { value: '1', label: 'Sportclub' },
                   { value: '~1.000', label: 'Leden bereikt' },
                   { value: '99.9%', label: 'Uptime' },
                 ].map(({ value, label }) => (
                   <div key={label}>
-                    <div className="text-2xl font-black text-white leading-none">{value}</div>
-                    <div className="text-xs font-medium mt-0.5" style={{ color: 'rgba(255,255,255,0.45)' }}>{label}</div>
+                    <div style={{ fontSize: 24, fontWeight: 900, color: '#ffffff', lineHeight: 1 }}>{value}</div>
+                    <div style={{ fontSize: 12, fontWeight: 500, color: 'rgba(255,255,255,0.45)', marginTop: 4 }}>{label}</div>
                   </div>
                 ))}
               </div>
@@ -633,25 +633,35 @@ export default function LandingPage() {
           </div>
 
           {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
             {features.map((f) => (
               <div
                 key={f.title}
-                className="feature-card bg-white rounded-2xl p-6 border"
-                style={{ borderColor: '#f1f5f9', boxShadow: '0 2px 16px rgba(0,0,0,0.05)' }}
+                className="feature-card"
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: 16,
+                  padding: 24,
+                  border: '1px solid #f1f5f9',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+                }}
               >
                 <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                  style={{ backgroundColor: f.bg }}
+                  style={{
+                    width: 44, height: 44, borderRadius: 12,
+                    backgroundColor: f.bg,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    marginBottom: 16, flexShrink: 0,
+                  }}
                 >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke={f.color} strokeWidth={1.75}>
+                  <svg style={{ width: 20, height: 20 }} fill="none" viewBox="0 0 24 24" stroke={f.color} strokeWidth={1.75}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={f.icon} />
                   </svg>
                 </div>
-                <h3 className="font-bold text-[17px] mb-2" style={{ color: '#0f172a', letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontWeight: 700, fontSize: 17, color: '#0f172a', letterSpacing: '-0.01em', marginBottom: 8 }}>
                   {f.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>{f.desc}</p>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: '#64748b', margin: 0 }}>{f.desc}</p>
               </div>
             ))}
           </div>
@@ -766,37 +776,23 @@ export default function LandingPage() {
             />
 
             {[
-              {
-                step: '01',
-                color: '#3b82f6',
-                bg: '#eff6ff',
-                title: 'Club aanmaken',
-                desc: 'Vul de clubnaam, kleuren en logo in. Activeer de modules die u wilt gebruiken.',
-              },
-              {
-                step: '02',
-                color: '#7c3aed',
-                bg: '#f5f3ff',
-                title: 'Koppelen & importeren',
-                desc: 'Verbind Sportlink met één Client ID. Wedstrijden en diensten worden automatisch geïmporteerd.',
-              },
-              {
-                step: '03',
-                color: '#10b981',
-                bg: '#ecfdf5',
-                title: 'Delen met leden',
-                desc: 'Deel de portaal-URL met uw leden of koppel uw eigen domeinnaam. Klaar.',
-              },
+              { step: '01', color: '#3b82f6', bg: '#eff6ff', title: 'Club aanmaken', desc: 'Vul de clubnaam, kleuren en logo in. Activeer de modules die u wilt gebruiken.' },
+              { step: '02', color: '#7c3aed', bg: '#f5f3ff', title: 'Koppelen & importeren', desc: 'Verbind Sportlink met één Client ID. Wedstrijden en diensten worden automatisch geïmporteerd.' },
+              { step: '03', color: '#10b981', bg: '#ecfdf5', title: 'Delen met leden', desc: 'Deel de portaal-URL met uw leden of koppel uw eigen domeinnaam. Klaar.' },
             ].map(({ step, color, bg, title, desc }) => (
-              <div key={step} className="text-center">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5 text-3xl font-black"
-                  style={{ backgroundColor: bg, color, boxShadow: `0 8px 24px ${color}25` }}
-                >
+              <div key={step} style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: 80, height: 80, borderRadius: 16,
+                  backgroundColor: bg, color,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  fontSize: 28, fontWeight: 900,
+                  boxShadow: `0 8px 24px ${color}25`,
+                }}>
                   {step}
                 </div>
-                <h3 className="font-bold text-[18px] mb-2" style={{ color: '#0f172a' }}>{title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>{desc}</p>
+                <h3 style={{ fontWeight: 700, fontSize: 18, color: '#0f172a', marginBottom: 8 }}>{title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: '#64748b', margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -1030,23 +1026,21 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className="pricing-card rounded-3xl p-8 flex flex-col relative"
-                style={
-                  plan.highlight
-                    ? {
-                        background: 'linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%)',
-                        boxShadow: '0 20px 60px rgba(59,130,246,0.25)',
-                        border: '1px solid rgba(59,130,246,0.3)',
-                      }
-                    : {
-                        backgroundColor: '#f8fafc',
-                        border: '1px solid #e2e8f0',
-                      }
-                }
+                className="pricing-card"
+                style={{
+                  borderRadius: 24,
+                  padding: 32,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  ...(plan.highlight
+                    ? { background: 'linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%)', boxShadow: '0 20px 60px rgba(59,130,246,0.25)', border: '1px solid rgba(59,130,246,0.3)' }
+                    : { backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }),
+                }}
               >
                 {plan.highlight && (
                   <div
@@ -1087,29 +1081,20 @@ export default function LandingPage() {
                   </p>
                 </div>
 
-                <ul className="space-y-3 flex-1 mb-8">
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                        style={{
-                          backgroundColor: plan.highlight ? 'rgba(59,130,246,0.2)' : '#eff6ff',
-                        }}
-                      >
-                        <svg
-                          className="w-3 h-3"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke={plan.highlight ? '#60a5fa' : '#3b82f6'}
-                          strokeWidth={2.5}
-                        >
+                    <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                      <div style={{
+                        width: 20, height: 20, borderRadius: '50%',
+                        backgroundColor: plan.highlight ? 'rgba(59,130,246,0.2)' : '#eff6ff',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                      }}>
+                        <svg style={{ width: 12, height: 12 }} fill="none" viewBox="0 0 24 24"
+                          stroke={plan.highlight ? '#60a5fa' : '#3b82f6'} strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span
-                        className="text-sm"
-                        style={{ color: plan.highlight ? 'rgba(255,255,255,0.75)' : '#475569' }}
-                      >
+                      <span style={{ fontSize: 14, color: plan.highlight ? 'rgba(255,255,255,0.75)' : '#475569' }}>
                         {f}
                       </span>
                     </li>
@@ -1157,20 +1142,30 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="space-y-3">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="group bg-white rounded-2xl overflow-hidden"
-                style={{ border: '1px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: 16,
+                  overflow: 'hidden',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                }}
               >
-                <summary
-                  className="flex items-center justify-between px-6 py-5 font-semibold text-[15px] cursor-pointer select-none"
-                  style={{ color: '#0f172a' }}
-                >
+                <summary style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                  padding: '20px 24px', fontWeight: 600, fontSize: 15,
+                  color: '#0f172a', cursor: 'pointer', userSelect: 'none',
+                }}>
                   {faq.q}
                 </summary>
-                <div className="px-6 pb-5 text-sm leading-relaxed" style={{ color: '#64748b', borderTop: '1px solid #f1f5f9', paddingTop: '16px' }}>
+                <div style={{
+                  padding: '16px 24px 20px',
+                  fontSize: 14, lineHeight: 1.7, color: '#64748b',
+                  borderTop: '1px solid #f1f5f9',
+                }}>
                   {faq.a}
                 </div>
               </details>
