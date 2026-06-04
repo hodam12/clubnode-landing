@@ -80,9 +80,10 @@ details[open] summary::after { transform: rotate(45deg); color: #3b82f6; }
   font-weight: 700; color: #fff; padding: 14px 24px; border-radius: 12px;
   text-decoration: none; transition: opacity 0.2s, transform 0.2s;
   background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+  box-shadow: 0 2px 0 0 #1e3a8a, 0 4px 20px rgba(59,130,246,0.35);
 }
-.btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+.btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(1px); box-shadow: 0 0 0 0 #1e3a8a; }
 
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;

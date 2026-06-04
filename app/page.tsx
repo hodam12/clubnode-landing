@@ -153,10 +153,11 @@ function ScreenMockup() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 12, padding: '8px 12px', borderRadius: 10, backgroundColor: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: 10, fontWeight: 700, color: '#34d399' }}>● Scheidsrechter gezocht: Zat 14:30</span>
-            <span style={{ fontSize: 10, fontWeight: 600, color: '#34d399' }}>Meld je aan →</span>
-          </div>
+        </div>
+        {/* Ticker bar */}
+        <div style={{ backgroundColor: '#2DD4BF', padding: '7px 16px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden', whiteSpace: 'nowrap' }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span style={{ fontSize: 10, fontWeight: 700, color: '#0f172a' }}>Scheidsrechter gezocht: Zat 14:30 &nbsp;·&nbsp; Meld je aan via het portaal</span>
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 8 }}>
@@ -205,7 +206,13 @@ export default function Page() {
       <nav style={{ position: 'sticky', top: 0, zIndex: 50, backgroundColor: 'rgba(15,23,42,0.92)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #3b82f6, #10b981)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontSize: 14 }}>C</div>
+            <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #3b82f6, #10b981)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 17, letterSpacing: '-0.01em' }}>Clubnode</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
@@ -220,7 +227,7 @@ export default function Page() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <a href="https://dashboard.clubnode.online" className="nav-link">Inloggen</a>
-            <a href="mailto:info@clubnode.online?subject=Demo aanvragen" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 700, color: '#fff', padding: '8px 18px', borderRadius: 10, background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)', textDecoration: 'none' }}>
+            <a href="mailto:info@clubnode.online?subject=Demo aanvragen" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 700, color: '#fff', padding: '8px 18px', borderRadius: 10, background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)', textDecoration: 'none', boxShadow: '0 2px 0 0 #1e3a8a' }}>
               Demo aanvragen
             </a>
           </div>
@@ -464,7 +471,7 @@ export default function Page() {
             {plans.map((plan) => (
               <div key={plan.name} className="pricing-card" style={{ borderRadius: 24, padding: 32, display: 'flex', flexDirection: 'column', position: 'relative', ...(plan.highlight ? { background: 'linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%)', boxShadow: '0 20px 60px rgba(59,130,246,0.25)', border: '1px solid rgba(59,130,246,0.3)' } : { backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }) }}>
                 {plan.highlight && (
-                  <div style={{ position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(135deg, #3b82f6, #10b981)', color: '#fff', fontSize: 12, fontWeight: 900, padding: '6px 16px', borderRadius: 999 }}>
+                  <div style={{ position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)', backgroundColor: '#2DD4BF', color: '#0f172a', fontSize: 11, fontWeight: 900, padding: '6px 16px', borderRadius: 999, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(45,212,191,0.4)' }}>
                     Meest gekozen
                   </div>
                 )}
@@ -542,7 +549,13 @@ export default function Page() {
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 40 }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-                <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #3b82f6, #10b981)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontSize: 14 }}>C</div>
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #3b82f6, #10b981)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    <path d="M2 12h20"/>
+                  </svg>
+                </div>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 17 }}>Clubnode</span>
               </div>
               <p style={{ fontSize: 14, lineHeight: 1.65, color: 'rgba(255,255,255,0.45)', maxWidth: 280, marginBottom: 16 }}>Het complete platform voor sportclubs in Nederland. Professioneel, eenvoudig en betaalbaar.</p>
@@ -561,8 +574,13 @@ export default function Page() {
               ))}
             </div>
           </div>
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: 48, paddingTop: 24, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: 48, paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>© {new Date().getFullYear()} Clubnode. Alle rechten voorbehouden.</p>
+            <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+              {[['#','Privacybeleid'],['#','Algemene voorwaarden'],['#','Cookiebeleid']].map(([href, label]) => (
+                <a key={label} href={href} style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', textDecoration: 'none', transition: 'color 0.15s' }} onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')} onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}>{label}</a>
+              ))}
+            </div>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>Gemaakt voor Nederlandse sportclubs</p>
           </div>
         </div>
