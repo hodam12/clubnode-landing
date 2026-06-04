@@ -578,7 +578,7 @@ export default function Page() {
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>© {new Date().getFullYear()} Clubnode. Alle rechten voorbehouden.</p>
             <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
               {[['#','Privacybeleid'],['#','Algemene voorwaarden'],['#','Cookiebeleid']].map(([href, label]) => (
-                <a key={label} href={href} style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', textDecoration: 'none', transition: 'color 0.15s' }} onMouseOver={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')} onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}>{label}</a>
+                <a key={label} href={href} className="footer-legal-link">{label}</a>
               ))}
             </div>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>Gemaakt voor Nederlandse sportclubs</p>
