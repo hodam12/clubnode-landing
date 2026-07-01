@@ -215,15 +215,10 @@ export default function Page() {
             </div>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 17, letterSpacing: '-0.01em' }}>Clubnode</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+          <div className="nav-links">
             {[['#features','Functies'],['#screens','Beeldschermen'],['#pricing','Prijzen'],['#faq','FAQ']].map(([href, label]) => (
-              <a key={href} href={href} className="nav-link" style={{ display: 'none' }}>{label}</a>
+              <a key={href} href={href} className="nav-link">{label}</a>
             ))}
-            <div style={{ display: 'flex', gap: 32 }}>
-              {[['#features','Functies'],['#screens','Beeldschermen'],['#pricing','Prijzen'],['#faq','FAQ']].map(([href, label]) => (
-                <a key={href} href={href} className="nav-link">{label}</a>
-              ))}
-            </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <a href="https://dashboard.clubnode.online" className="nav-link">Inloggen</a>
@@ -241,7 +236,7 @@ export default function Page() {
             {/* Left */}
             <div>
               <div className="badge anim-1" style={{ backgroundColor: 'rgba(59,130,246,0.12)', color: '#93c5fd', border: '1px solid rgba(59,130,246,0.25)', marginBottom: 24 }}>
-                <span>✦</span> Nieuw: Automatische Sportlink synchronisatie
+                <span aria-hidden="true">✦</span> Nieuw: Automatische Sportlink synchronisatie
               </div>
               <h1 className="anim-2" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.03em', color: '#fff', marginBottom: 24 }}>
                 Het complete platform <span className="gradient-text">voor uw sportclub</span>
@@ -546,7 +541,7 @@ export default function Page() {
       {/* FOOTER */}
       <footer style={{ backgroundColor: '#020617', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="container" style={{ paddingTop: 56, paddingBottom: 56 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 40 }}>
+          <div className="footer-grid">
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
                 <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #3b82f6, #10b981)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
